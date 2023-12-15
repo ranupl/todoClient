@@ -14,7 +14,7 @@ const TodoEdit = () => {
     dueDate: "",
   });
 
-  const fetchData = async () => {
+  const fetchTodoData = async () => {
     let response = await getTaskByIdAPI(id);
     if (response.success) {
       settodoDetail({
@@ -26,6 +26,8 @@ const TodoEdit = () => {
       });
     }
   };
+
+  fetchTodoData();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,9 +47,22 @@ const TodoEdit = () => {
     settodoDetail({ ...todoDetail, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
+  useEffect((id) => {
+    const fetchData = async () => {
+      let response = await getTaskByIdAPI(id);
+      if (response.success) {
+        settodoDetail({
+          title: response.data.title,
+          description: response.data.description,
+          priority: response.data.priority,
+          status: response.data.status,
+          dueDate: response.data.dueDate,
+        });
+      }
+    };
     fetchData();
   }, []);
+
   return (
     <div>
       <div className="Updatecontainer mx-auto bg-gray-800">
