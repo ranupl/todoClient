@@ -56,6 +56,7 @@ const Register = () => {
               name="firstname"
               value={userDetail.firstname}
               onChange={changeHandler}
+              required
             />
           </div>
           <div className="formControl">
@@ -67,6 +68,7 @@ const Register = () => {
               name="lastname"
               value={userDetail.lastname}
               onChange={changeHandler}
+              required
             />
           </div>
           <div className="formControl">
@@ -78,6 +80,7 @@ const Register = () => {
               name="email"
               value={userDetail.email}
               onChange={changeHandler}
+              required
             />
           </div>
           <div className="formControl">
@@ -89,6 +92,7 @@ const Register = () => {
               name="username"
               value={userDetail.username}
               onChange={changeHandler}
+              required
             />
           </div>
           <div className="formControl">
@@ -100,6 +104,7 @@ const Register = () => {
               name="password"
               value={userDetail.password}
               onChange={changeHandler}
+              required
             />
           </div>
           <button type="submit" className="btn">

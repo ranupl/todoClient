@@ -52,6 +52,7 @@ const Login = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setemail(e.target.value)}
+                required
               />
             </div>
             <div className="formControl">
@@ -63,6 +64,7 @@ const Login = () => {
                 name="password"
                 value={password}
                 onChange={(e) => setpassword(e.target.value)}
+                required
               />
             </div>
             <button type="submit" className="btn">
