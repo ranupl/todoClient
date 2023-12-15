@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Table from "./Table";
-import { jwtDecode } from "jwt-decode";
 import { addTaskAPI, deleteTaskAPI, getAllTaskAPI } from "../Api/Todo_service";
-import { useNavigate } from "react-router-dom";
 import Logout from "./Logout";
 
 const TodoList = () => {
-  const navigate = useNavigate();
   const [isOpen, setisOpen] = useState(false);
   const [todoData, settodoData] = useState([]);
   const [filterData, setfilterData] = useState([]);
-  const [search, setsearch] = useState("");
 
   const [todoDetail, settodoDetail] = useState({
     title: "",
