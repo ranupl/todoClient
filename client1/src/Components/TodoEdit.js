@@ -47,7 +47,7 @@ const TodoEdit = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
   return (
     <div>
       <div className="Updatecontainer mx-auto bg-gray-800">
